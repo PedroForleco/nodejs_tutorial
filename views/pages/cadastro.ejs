@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<%- include ("../partials/head")%>
+
+
+
+<body>
+
+    <%- include("../partials/menu"); %>
+
+    Página Cadastro <br> <br> 
+    <a href="/index">Clique aqui para ir na Página Inicial </a>
+    <%- include("../partials/footer"); %>
+
+    <main>
+        Bem-Vindo a Página Cadastro
+        <center>
+        <form action="/cadastro" method="post" class="formItens"> <br> 
+            Nome para Cadastro:
+            <input type="text" name="username" id="username" placeholder="Digite seu usuário para cadastro"> <br>
+            Senha para Cadastro:
+            <input type="password" name="password" id="senha" placeholder="Digite sua senha para cadastro"> <br> <br> 
+            <button type="submit">Cadastrar</button>
+        </form>
+        </center>
+    </main>
+</body>
+
+</html>
