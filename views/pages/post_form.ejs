@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link rel="icon" href="static/PAF.png" type="image/x-icon">
+
+<%- include ("../partials/head")%>
+
+<body>
+  <%- include("../partials/menu"); %> <br>
+   
+    
+   <main>
+      <center><h5 id="hiLogin">NOVA POSTAGEM</h5></center>
+      <form action="/post_create" method="post">
+        <label for="titulo"> Título: </label>
+        <input type="text" placeholder="Digite o título da Postagem" id="titulo" name="titulo" required/>
+        <label for="conteudo"> Conteúdo: </label>
+        <textarea id="conteudo" id="content" placeholder="Digite o conteúdo da Postagem" rows="6" cols="45" required></textarea>
+        <button type="submit" id="btnPost"> POSTAR </button>
+    </form>
+   </main>
+   
+  <%- include("../partials/footer"); %>
+
+</body>
+
+</html>

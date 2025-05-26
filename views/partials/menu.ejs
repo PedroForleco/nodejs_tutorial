@@ -1,8 +1,15 @@
 <header>
-    <nav>
-    <a href="/sobre">Página Sobre </a> <br> 
-    <a href="/login">Página Login</a>  <br> 
-    <a href="/cadastro">Página Cadastro</a>  <br> 
-    <a href="/dashboard">Página Dashboard </a>  <br> 
-    </nav>
+  <nav>
+     <a href="/"> HOME</a>
+     <a href="/sobre">SOBRE </a>
+    <% if(!req.session.loggedin) {%>
+     <a href="/login">LOGIN</a>
+     <a href="/cadastro">CADASTRO</a>
+    <%} else {%>
+     <a href="/dashboard">DASHBOARD</a>
+     <a href="/postagens">POSTAGENS</a>
+     <a href="/post_create">NOVA POSTAGEM</a>
+     <a href="/logout">LOGOUT</a>
+    <%} %>
+  </nav>
 </header>

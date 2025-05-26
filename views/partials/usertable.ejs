@@ -1,0 +1,27 @@
+<%- console.log(JSON.stringify(dados)) %>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Senha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (let i = 0; i < dados.length; i++) { %>
+        <tr>
+          <td><%= dados[i].id %></td>
+          <td><%= dados[i].username %></td>
+          <td><%= dados[i].password %></td>
+        </tr>
+      <% } %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">Quantidade de Registros: <%= dados.length %></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

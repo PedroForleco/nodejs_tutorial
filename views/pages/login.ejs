@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<link rel="icon" href="static/PAF.png" type="image/x-icon">
 
 <%- include ("../partials/head")%>
 
 <body>
 
-    <%- include("../partials/menu"); %>
+  <%- include("../partials/menu"); %>
 
-    Página Login <br> <br>
-    <a href="/index">Clique aqui para ir na Página Inicial </a>
 
+
+  <main>
+    <center>
+      <h5> FAZER LOGIN</h5>
+      <form action="/login" method="post" class="formItens"> <br>
+        Seu nome:
+        <input type="text" name="username" id="username" placeholder="Digite seu usuário"> <br>
+        Senha:
+        <input type="password" name="password" id="senha" placeholder="Digite sua senha"> <br> <br>
+        <button type="submit">Entrar</button>
+      </form>
+    </center>
+  </main>
     <%- include("../partials/footer"); %>
-
-    <main>
-        <center>
-        <form action="/login" method="post" class="formItens"> <br> 
-            Seu nome:
-            <input type="text" name="username" id="username" placeholder="Digite seu usuário"> <br>
-            Senha:
-            <input type="password" name="password" id="senha" placeholder="Digite sua senha"> <br> <br> 
-            <button type="submit">Entrar</button>
-        </form>
-        </center>
-    </main>
 </body>
 
 </html>
