@@ -157,6 +157,16 @@ app.get("/dashboard", (req, res) => {
     console.log("GET/dashboard");
 });
 
+app.get("/postagens", (req, res) => {
+    console.log("GET /postagens")
+    const query = "SELECT * FROM posts";
+    db.all(query, [], (err, row) => {
+        if (err) throw err;
+        console.log(JSON.stringify(row));
+        res.render("pages/postagens", { titulo: "Tabela de posts", dados: row, req: req });
+    })
+});
+
 app.get("/logout", (req, res) => {
     console.log("GET /logout");
     req.session.destroy(() => {
@@ -189,14 +199,14 @@ app.post("/post_create", (req, res) => {
         console.log("Data de Criação", data_criacao, "Username", req.session.username,
             "id_username: ", req.session.id_username);
 
-            const query = "INSERT INTO posts (id_users, titulo, conteudo, data_criacao) VALUES (?, ?, ?, ?)"; 
+        const query = "INSERT INTO posts (id_users, titulo, conteudo, data_criacao) VALUES (?, ?, ?, ?)";
 
-        db.get(query, [req.session.id_username,  titulo, conteudo, data_criacao], (err) =>{
-            if(err) throw err;
-            res.send('Post Criado');
+        db.get(query, [req.session.id_username, titulo, conteudo, data_criacao], (err) => {
+            if (err) throw err;
+            res.redirect("/postagens");
         });
 
-    }  else {
+    } else {
         res.redirect("/invalido");
     }
 

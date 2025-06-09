@@ -1,23 +1,23 @@
 <%- console.log(JSON.stringify(dados)) %>
-
+<center><b>POSTAGENS</b></center>
 <div class="table-container">
   <table>
     <thead>
       <tr>
         <th>ID</th>
-        <th>Username</th>
-        <th>Senha</th>
+        <th>Título</th>
+        <th>Conteúdo</th>
+        <th>Data de Criação</th>
       </tr>
     </thead>
     <tbody>
       <% for (let i = 0; i < dados.length; i++) { %>
-        <tr>
-          <td><%= dados[i].id %></td>
-          <td><%= dados[i].id_username %></td>
-          <td><%= dados[i].titulo %></td>
-          <td><%= dados[i].conteudo %></td>
-          <td><%= dados[i].data_criacao%></td>
-        </tr>
+      <tr>
+        <td><%= dados[i].id %></td>
+        <td><%= dados[i].titulo %></td>
+        <td><%= dados[i].conteudo %></td>
+        <td><%= dados[i].data_criacao%></td>
+      </tr>
       <% } %>
     </tbody>
     <tfoot>
