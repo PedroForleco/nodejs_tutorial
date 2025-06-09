@@ -8,10 +8,16 @@
 
   <%- include("../partials/menu"); %>
 
+  <form method="GET" action="/postagens" style="margin-bottom: 20px; text-align: center;">
+  <input type="text" name="search" placeholder="Pesquisar postagens..." value="<%= search %>">
+  <button type="submit">Buscar</button>
+  </form>
+  
   <main>
     <%- include("../partials/usertable1"); %>
   </main>
-
+  
+   
   <%- include("../partials/footer"); %>
 </body>
 

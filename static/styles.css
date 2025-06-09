@@ -65,7 +65,7 @@ form {
 }
 
 label {
-   color: #c62828;
+   color: #a98e42;
    font-weight: bold;
 }
 
@@ -151,10 +151,10 @@ tfoot td {
 }
 
 .h4{
-   color: #a98e42;
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   color: #a98e42; /* Editar as cores*/
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
    text-align: center;
-   font-size: 10px;
+   font-size: 22px;
 }
 
 .h5{
@@ -164,3 +164,60 @@ tfoot td {
    font-size: 10px;
 }
 
+
+/* Estilo do formulário de busca */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+form input[type="text"] {
+    padding: 10px 15px;
+    width: 300px;
+    max-width: 90%;
+    border: 1px solid #ccc;
+    border-radius: 0 4px 4px 0 ;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input[type="text"]:focus {
+    border-color: #a98e42;
+    box-shadow: #388e3c;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #388e3c;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #388e3c;
+}
+
+/* Responsivo */
+@media (max-width: 500px) {
+    form {
+        flex-direction: column;
+    }
+
+    form input[type="text"] {
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    form button {
+        border-radius: 10px;
+        width: 100%;
+    }
+}

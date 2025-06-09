@@ -159,12 +159,29 @@ app.get("/dashboard", (req, res) => {
 
 app.get("/postagens", (req, res) => {
     console.log("GET /postagens")
-    const query = "SELECT * FROM posts";
-    db.all(query, [], (err, row) => {
+
+    const search = req.query.search || ""; // pegar o termo de busca (se houver)
+
+    let query;
+    let params = [];
+
+    if (search) {
+        query = `SELECT * FROM posts WHERE titulo LIKE ? OR conteudo LIKE ?`;
+        params = [`%${search}%`, `%${search}%`];
+    } else {
+        query = `SELECT * FROM posts`;
+    }
+
+    db.all(query, params, (err, row) => {
         if (err) throw err;
         console.log(JSON.stringify(row));
-        res.render("pages/postagens", { titulo: "Tabela de posts", dados: row, req: req });
-    })
+        res.render("pages/postagens", {
+            titulo: "Tabela de posts",
+            dados: row,
+            search: search,
+            req: req
+        });
+    });
 });
 
 app.get("/logout", (req, res) => {
