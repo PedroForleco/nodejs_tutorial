@@ -15,6 +15,7 @@
     "express": "^5.1.0",
     "express-session": "^1.18.1",
     "prompt-sync": "^4.2.0",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^5.1.7",
+    "xss": "^1.0.15"
   }
 }
