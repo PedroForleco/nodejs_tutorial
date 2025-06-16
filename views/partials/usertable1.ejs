@@ -8,21 +8,32 @@
         <th>Título</th>
         <th>Conteúdo</th>
         <th>Data de Criação</th>
+        <% if (req.session.adm === true) { %>
+          <th>Ações</th>
+        <% } %>
       </tr>
     </thead>
     <tbody>
       <% for (let i = 0; i < dados.length; i++) { %>
-      <tr>
-        <td><%= dados[i].id %></td>
-        <td><%= dados[i].titulo %></td>
-        <td><%= dados[i].conteudo %></td>
-        <td><%= dados[i].data_criacao%></td>
-      </tr>
+        <tr>
+          <td><%= dados[i].id %></td>
+          <td><%= dados[i].titulo %></td>
+          <td><%= dados[i].conteudo %></td>
+          <td><%= dados[i].data_criacao %></td>
+
+          <% if (req.session.adm === true) { %>
+            <td>
+              <form action="/deletar/<%= dados[i].id %>" method="POST" onsubmit="return confirm('Tem certeza que deseja deletar esta postagem?')">
+                <input type="submit" value="DELETAR">
+              </form>
+            </td>
+          <% } %>
+        </tr>
       <% } %>
     </tbody>
     <tfoot>
       <tr>
-        <td colspan="3">Quantidade de Registros: <%= dados.length %></td >
+        <td colspan="5">Quantidade de Registros: <%= dados.length %></td>
       </tr>
     </tfoot>
   </table>
