@@ -5,11 +5,11 @@
       <% if(!req.session.loggedin) {%>
         <a href="/login"><input type="button" value="LOGIN" id="links"></a>
         <a href="/cadastro"><input type="button" value="CADASTRO" id="links"></a>
+        <%} else {%>
+          <% if(req.session.adm){ %>
+            <a href="/dashboard"><input type="button" value="DASHBOARD" id="links"></a>
+            <% } %>
         <a href="/postagens"><input type="button" value="POSTAGENS" id="links"></a>
-      <%} else {%>
-        <% if(req.session.adm){ %>
-          <a href="/dashboard"><input type="button" value="DASHBOARD" id="links"></a>
-        <% } %>
         <a href="/post_create"><input type="button" value="NOVA POSTAGEM" id="links"></a>
         <a href="/logout"><input type="button" value="LOGOUT" id="links"></a>
     <% } %>
