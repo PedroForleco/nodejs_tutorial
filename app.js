@@ -128,8 +128,8 @@ app.get("/dashboard", (req, res) => {
 app.get("/postagens", (req, res) => {
     console.log("GET /postagens");
     const search = req.query.search || "";
-    const query = "SELECT * FROM posts";
-    const params = [];
+    let query = "SELECT * FROM posts";
+    let params = [];
 
     if (search) {
         query = `SELECT * FROM posts WHERE titulo LIKE ? OR conteudo LIKE ?`;
